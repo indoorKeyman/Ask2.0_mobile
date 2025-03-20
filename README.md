@@ -87,3 +87,4 @@
 ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
 
 ## 6. 아키텍쳐
+![Ask 2 0 mobile version](https://github.com/user-attachments/assets/c4d39e0e-be54-4a52-b563-3ad88d4a43c6)
