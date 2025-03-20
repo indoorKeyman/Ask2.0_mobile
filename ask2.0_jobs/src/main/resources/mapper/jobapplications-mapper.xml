@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="JobsApplications">
+    <select id="getAllJobApplications" resultType="jobApplicationsDTO">
+        select *
+        from job_applications
+    </select>
+    <select id="getPendingJobApplications" resultType="jobApplicationsDTO">
+        select *
+        from job_applications
+        where application_status = 'PENDING'
+    </select>
+    <select id="getApprovedJobApplications" resultType="jobApplicationsDTO">
+        select *
+        from job_applications
+        where application_status = 'APPROVED'
+    </select>
+    <select id="getRejectedJobApplications" resultType="jobApplicationsDTO">
+        select *
+        from job_applications
+        where application_status = 'REJECTED'
+    </select>
+    <select id="getByIdJobApplications" parameterType="map" resultType="jobApplicationsDTO">
+        select *
+        from job_applications
+        where members_index = #{members_index}
+    </select>
+    <insert id="makeJobApplications" parameterType="map" >
+        insert into job_applications (
+            jobs_index,
+            members_index,
+            self_introduction
+        ) values (
+                  #{jobs_index},
+                  #{members_index},
+                  #{self_introduction}
+                         )
+    </insert>
+    <update id="updateJobApplications" parameterType="map">
+        update job_applications
+        set
+            self_introduction = case when #{self_introduction} is not null then #{self_introduction} else self_introduction end
+        where
+            application_index = #{application_index}
+    </update>
+
+</mapper>

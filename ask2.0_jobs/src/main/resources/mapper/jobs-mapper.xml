@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Jobs">
+    <select id="getEndJobs"  resultType="jobsDTO">
+        select *
+        from jobs
+        where current_date > end_date
+    </select>
+    <select id="getRecruitJobs" resultType="jobsDTO">
+        select *
+        from jobs
+        where current_date between start_date and end_date
+    </select>
+    <select id="getJobsById" parameterType="int" resultType="jobsDTO">
+        select *
+        from jobs
+        where jobs_index = #{jobs_index}
+    </select>
+    <select id="getAllJobs" resultType="jobsDTO">
+        select *
+        from jobs
+    </select>
+    <insert id="makeJobs" parameterType="jobsDTO">
+        insert into jobs (
+            member_index,
+            title,
+            location,
+            level,
+            responsibilities,
+            qualification,
+            preferences,
+            start_date,
+            end_date
+        ) values (
+                     #{member_index},
+                     #{title},
+                     #{location},
+                     #{level},
+                     #{responsibilities},
+                     #{qualification},
+                     #{preferences},
+                     #{start_date},
+                     #{end_date}
+                 )
+    </insert>
+    <delete id="deleteJobs" parameterType="map">
+        delete
+        from jobs
+        where jobs_index = #{jobs_index}
+    </delete>
+    <update id="updateJobs" parameterType="map">
+        update jobs
+        set
+            title = case when #{title} is not null then #{title} else title end,
+            location = case when #{location} is not null then #{location} else location end,
+            level = case when #{level} is not null then #{level} else level end,
+            responsibilities = case when #{responsibilities} is not null then #{responsibilities} else responsibilities end,
+            qualification = case when #{qualification} is not null then #{qualification} else qualification end,
+            preferences = case when #{preferences} is not null then #{preferences} else preferences end,
+            start_date = case when #{start_date} is not null then #{start_date} else start_date end,
+            end_date = case when #{end_date} is not null then #{end_date} else end_date end
+        where
+            jobs_index = #{jobs_index}
+    </update>
+
+</mapper>
