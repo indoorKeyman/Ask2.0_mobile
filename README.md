@@ -36,7 +36,7 @@
 | Ask 2.0 mobile ver.  | 25.03.05 | 25.03.19 |
 
 
-## 3. Screen Flow
+## 4. Screen Flow
 ### Home & Menu
 <img width="207" alt="home" src="https://github.com/user-attachments/assets/7f95fbcd-e061-4ba6-8d26-19eb6da119de" />
 <img width="207" alt="menu" src="https://github.com/user-attachments/assets/78859c07-3766-447b-b17f-cf99464edece" />
@@ -58,7 +58,7 @@
 ### RAG
 <img width="207" alt="ai assistant" src="https://github.com/user-attachments/assets/9fef4498-d5a0-4d25-a786-ea447cbf617b" />
 
-## 4. 기술 스택
+## 5. 기술 스택
 #### FRONT-END
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 <img src="https://img.shields.io/badge/nginx-%23009639.svg?style=for-the-badge&logo=nginx&logoColor=white">
@@ -86,4 +86,4 @@
 <img src="https://img.shields.io/badge/Amazon%20EC2-FF9900?style=for-the-badge&logo=Amazon%20EC2&logoColor=white">
 ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
 
-## 5. 아키텍쳐
+## 6. 아키텍쳐
